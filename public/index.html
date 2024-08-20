@@ -3,27 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalculatorOne</title>
-    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Calculator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Changed to flex-start to allow scrolling to top */
+            align-items: flex-start;
             height: 100vh;
             margin: 0;
-            padding: 20px; /* Added padding to ensure some space around the content */
-            overflow-y: auto; /* Added to allow vertical scrolling */
-        }
-        .container {
-            text-align: center;
-            width: 100%;
-        }
-        .title {
-            font-size: 2em;
-            margin-bottom: 20px;
+            padding: 20px;
+            overflow-y: auto;
         }
         .calculator {
             background: #fff;
@@ -31,7 +22,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             width: 320px;
-            margin: 0 auto;
             text-align: center;
         }
         .calculator input {
@@ -94,52 +84,35 @@
                     .5em 0 0 black;
             }
         }
-        .shortcut-link {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-        .school-safe-link {
-            margin-top: 20px;
-            font-size: 1em;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="shortcut-link">
-            <a href="https://www.icloud.com/shortcuts/ae34796fa89043b7b56f92034386c870">Get The Shortcut For iPhone!</a>
+    <div class="calculator">
+        <input type="text" id="expression" placeholder="Enter algebraic expression" onkeydown="handleKeyDown(event)">
+        <div>
+            <button onclick="appendSymbol('+')">+</button>
+            <button onclick="appendSymbol('-')">-</button>
+            <button onclick="appendSymbol('*')">*</button>
+            <button onclick="appendSymbol('/')">/</button>
+            <button onclick="appendSymbol('(')">(</button>
+            <button onclick="appendSymbol(')')">)</button>
+            <button onclick="appendSymbol('x')">x</button>
+            <button onclick="appendSymbol('y')">y</button>
+            <button onclick="appendSymbol('^')">^</button>
+            <button onclick="appendSymbol('=')">=</button>
+            <button onclick="appendSymbol('sqrt(')">√</button>
+            <button onclick="appendSymbol('^2')">x²</button>
+            <button onclick="appendSymbol('pi')">π</button>
+            <button onclick="appendSymbol('e')">e</button>
+            <button onclick="appendSymbol('log(')">log</button>
+            <button onclick="appendSymbol('sin(')">sin</button>
+            <button onclick="appendSymbol('cos(')">cos</button>
+            <button onclick="appendSymbol('tan(')">tan</button>
+            <button onclick="appendSymbol('ln(')">ln</button>
+            <button onclick="insertExponent()">x^y</button>
+            <button onclick="solve()">Solve</button>
         </div>
-        <div class="title">CalculatorOne</div>
-        <div class="calculator">
-            <input type="text" id="expression" placeholder="Enter algebraic expression" onkeydown="handleKeyDown(event)">
-            <div>
-                <button onclick="appendSymbol('+')">+</button>
-                <button onclick="appendSymbol('-')">-</button>
-                <button onclick="appendSymbol('*')">*</button>
-                <button onclick="appendSymbol('/')">/</button>
-                <button onclick="appendSymbol('(')">(</button>
-                <button onclick="appendSymbol(')')">)</button>
-                <button onclick="appendSymbol('x')">x</button>
-                <button onclick="appendSymbol('y')">y</button>
-                <button onclick="appendSymbol('^')">^</button>
-                <button onclick="appendSymbol('=')">=</button>
-                <button onclick="appendSymbol('sqrt(')">√</button>
-                <button onclick="appendSymbol('^2')">x²</button>
-                <button onclick="appendSymbol('pi')">π</button>
-                <button onclick="appendSymbol('e')">e</button>
-                <button onclick="appendSymbol('log(')">log</button>
-                <button onclick="appendSymbol('sin(')">sin</button>
-                <button onclick="appendSymbol('cos(')">cos</button>
-                <button onclick="appendSymbol('tan(')">tan</button>
-                <button onclick="appendSymbol('ln(')">ln</button>
-                <button onclick="insertExponent()">x^y</button>
-                <button onclick="solve()">Solve</button>
-            </div>
-            <div id="result"></div>
-        </div>
-        <div class="school-safe-link">
-            <a href="schoolsafe.html">School Safe Version</a>
-        </div>
+        <div id="result"></div>
     </div>
 
     <script>
