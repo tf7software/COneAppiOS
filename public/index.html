@@ -16,6 +16,14 @@
             padding: 20px;
             overflow-y: auto;
         }
+        .calculator-container {
+            text-align: center;
+        }
+        .powered-by {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            color: #555;
+        }
         .calculator {
             background: #fff;
             padding: 20px;
@@ -87,32 +95,35 @@
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="expression" placeholder="Enter algebraic expression" onkeydown="handleKeyDown(event)">
-        <div>
-            <button onclick="appendSymbol('+')">+</button>
-            <button onclick="appendSymbol('-')">-</button>
-            <button onclick="appendSymbol('*')">*</button>
-            <button onclick="appendSymbol('/')">/</button>
-            <button onclick="appendSymbol('(')">(</button>
-            <button onclick="appendSymbol(')')">)</button>
-            <button onclick="appendSymbol('x')">x</button>
-            <button onclick="appendSymbol('y')">y</button>
-            <button onclick="appendSymbol('^')">^</button>
-            <button onclick="appendSymbol('=')">=</button>
-            <button onclick="appendSymbol('sqrt(')">√</button>
-            <button onclick="appendSymbol('^2')">x²</button>
-            <button onclick="appendSymbol('pi')">π</button>
-            <button onclick="appendSymbol('e')">e</button>
-            <button onclick="appendSymbol('log(')">log</button>
-            <button onclick="appendSymbol('sin(')">sin</button>
-            <button onclick="appendSymbol('cos(')">cos</button>
-            <button onclick="appendSymbol('tan(')">tan</button>
-            <button onclick="appendSymbol('ln(')">ln</button>
-            <button onclick="insertExponent()">x^y</button>
-            <button onclick="solve()">Solve</button>
+    <div class="calculator-container">
+        <div class="powered-by">Powered by Gemini</div>
+        <div class="calculator">
+            <input type="text" id="expression" placeholder="Enter algebraic expression" onkeydown="handleKeyDown(event)">
+            <div>
+                <button onclick="appendSymbol('+')">+</button>
+                <button onclick="appendSymbol('-')">-</button>
+                <button onclick="appendSymbol('*')">*</button>
+                <button onclick="appendSymbol('/')">/</button>
+                <button onclick="appendSymbol('(')">(</button>
+                <button onclick="appendSymbol(')')">)</button>
+                <button onclick="appendSymbol('x')">x</button>
+                <button onclick="appendSymbol('y')">y</button>
+                <button onclick="appendSymbol('^')">^</button>
+                <button onclick="appendSymbol('=')">=</button>
+                <button onclick="appendSymbol('sqrt(')">√</button>
+                <button onclick="appendSymbol('^2')">x²</button>
+                <button onclick="appendSymbol('pi')">π</button>
+                <button onclick="appendSymbol('e')">e</button>
+                <button onclick="appendSymbol('log(')">log</button>
+                <button onclick="appendSymbol('sin(')">sin</button>
+                <button onclick="appendSymbol('cos(')">cos</button>
+                <button onclick="appendSymbol('tan(')">tan</button>
+                <button onclick="appendSymbol('ln(')">ln</button>
+                <button onclick="insertExponent()">x^y</button>
+                <button onclick="solve()">Solve</button>
+            </div>
+            <div id="result"></div>
         </div>
-        <div id="result"></div>
     </div>
 
     <script>
